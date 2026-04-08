@@ -584,7 +584,7 @@ powercfg /s a059e6c9-b478-41a2-8f0f-d643946af5f7 >nul 2>&1
 timeout /t 5 /nobreak > NUL
 
 :: Final
-echo AuraOS 22H2 Lite Post Script Completed...
+echo UNFAIR 22H2 Lite Post Script Completed...
 
 :: Restart
 shutdown /r /f /t 10 /c "UNFAIR 22H2 Lite: Restarting PC"
