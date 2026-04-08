@@ -1,0 +1,610 @@
+@echo off
+Title UNFAIR TEAM TWEAKS
+chcp 65001 >nul
+color A
+taskkill /F /IM explorer.exe >nul 2>&1
+powershell -Command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
+
+echo.                       ████████ ███████      ████████  ████████  █   █ ████████
+echo.                       ██    ██ ██                  █         █  █   █        █
+echo.                       ██    ██ ███████      ████████  ████████  █████ ████████
+echo.                       ██    ██      ██      █         █         █   █ █
+echo.                       ████████ ███████      ████████  ████████  █   █ ████████
+echo.  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+echo.  ║                                                                                                        ║
+echo.  ║                                   Welcome to UNFAIR 22H2 Lite.                                         ║
+echo.  ║                   Windows 10 22H2 Modified to get the Best Performance from your Hardware.             ║
+echo.  ║                                     https://dsc.gg/unfairteam                                          ║
+echo.  ║                                                                                                        ║
+echo.  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+echo.
+echo.
+echo.   Please press ENTER to continue with the UNFAIR 22H2 Lite POST SCRIPT...
+pause
+
+echo. Installing Open Shell in UNFAIR 22H2 Lite.
+call %SYSTEMROOT%\Setup\Files\openshell.exe /qn ADDLOCAL=StartMenu >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Installing Restribuibles in UNFAIR 22H2 Lite.
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2005_x86.exe /q >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2005_x64.exe /q >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2008_x86.exe /qb >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2008_x64.exe /qb >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2010_x86.exe /passive /norestart >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2010_x64.exe /passive /norestart >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2012_x86.exe /passive /norestart >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2012_x64.exe /passive /norestart >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\\Visual\vcredist2013_x86.exe /passive /norestart >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2013_x64.exe /passive /norestart >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2015_2017_2019_2022_x86.exe /passive /norestart >nul 2>&1
+start /wait %SYSTEMROOT%\Setup\Files\Visual\vcredist2015_2017_2019_2022_x64.exe /passive /norestart >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Installing DirectX in UNFAIR 22H2 Lite.
+call %SYSTEMROOT%\Setup\Files\DirectX\dxsetup.exe /silent >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Installing 7-ZIP in UNFAIR 22H2 Lite.
+call %SYSTEMROOT%\Setup\Files\7zip.msi /quiet /norestart >nul 2>&1
+rd /s /q "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\7-Zip" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Configuring 7-ZIP in UNFAIR 22H2 Lite.
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.7z" /ve /t REG_SZ /d "7-Zip.7z" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.7z" /ve /t REG_SZ /d "7z Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.7z\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,0" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.7z\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.7z\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.7z\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.zip" /ve /t REG_SZ /d "7-Zip.zip" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.zip" /ve /t REG_SZ /d "zip Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.zip\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,1" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.zip\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.zip\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.zip\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.rar" /ve /t REG_SZ /d "7-Zip.rar" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rar" /ve /t REG_SZ /d "rar Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rar\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,3" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rar\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rar\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rar\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.001" /ve /t REG_SZ /d "7-Zip.001" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.001" /ve /t REG_SZ /d "001 Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.001\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,9" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.001\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.001\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.001\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.cab" /ve /t REG_SZ /d "7-Zip.cab" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cab" /ve /t REG_SZ /d "cab Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cab\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,7" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cab\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cab\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cab\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.iso" /ve /t REG_SZ /d "7-Zip.iso" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.iso" /ve /t REG_SZ /d "iso Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.iso\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,8" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.iso\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.iso\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.iso\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.xz" /ve /t REG_SZ /d "7-Zip.xz" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xz" /ve /t REG_SZ /d "xz Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xz\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,23" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xz\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xz\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xz\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.txz" /ve /t REG_SZ /d "7-Zip.txz" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.txz" /ve /t REG_SZ /d "txz Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.txz\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,23" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.txz\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.txz\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.txz\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.lzma" /ve /t REG_SZ /d "7-Zip.lzma" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzma" /ve /t REG_SZ /d "lzma Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzma\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,16" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzma\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzma\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzma\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.tar" /ve /t REG_SZ /d "7-Zip.tar" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tar" /ve /t REG_SZ /d "tar Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tar\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,13" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tar\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tar\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tar\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.cpio" /ve /t REG_SZ /d "7-Zip.cpio" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cpio" /ve /t REG_SZ /d "cpio Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cpio\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,12" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cpio\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cpio\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.cpio\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.bz2" /ve /t REG_SZ /d "7-Zip.bz2" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bz2" /ve /t REG_SZ /d "bz2 Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bz2\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,2" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bz2\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bz2\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bz2\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.bzip2" /ve /t REG_SZ /d "7-Zip.bzip2" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bzip2" /ve /t REG_SZ /d "bzip2 Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bzip2\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,2" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bzip2\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bzip2\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.bzip2\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.tbz2" /ve /t REG_SZ /d "7-Zip.tbz2" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz2" /ve /t REG_SZ /d "tbz2 Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz2\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,2" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz2\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz2\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz2\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.tbz" /ve /t REG_SZ /d "7-Zip.tbz" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz" /ve /t REG_SZ /d "tbz Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,2" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tbz\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.gz" /ve /t REG_SZ /d "7-Zip.gz" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gz" /ve /t REG_SZ /d "gz Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gz\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,14" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gz\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gz\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gz\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.gzip" /ve /t REG_SZ /d "7-Zip.gzip" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gzip" /ve /t REG_SZ /d "gzip Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gzip\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,14" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gzip\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gzip\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.gzip\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.tgz" /ve /t REG_SZ /d "7-Zip.tgz" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tgz" /ve /t REG_SZ /d "tgz Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tgz\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,14" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tgz\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tgz\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tgz\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.tpz" /ve /t REG_SZ /d "7-Zip.tpz" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tpz" /ve /t REG_SZ /d "tpz Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tpz\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,14" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tpz\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tpz\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.tpz\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.z" /ve /t REG_SZ /d "7-Zip.z" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.z" /ve /t REG_SZ /d "z Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.z\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,5" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.z\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.z\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.z\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.taz" /ve /t REG_SZ /d "7-Zip.taz" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.taz" /ve /t REG_SZ /d "taz Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.taz\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,5" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.taz\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.taz\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.taz\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.lzh" /ve /t REG_SZ /d "7-Zip.lzh" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzh" /ve /t REG_SZ /d "lzh Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzh\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,6" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzh\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzh\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lzh\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.lha" /ve /t REG_SZ /d "7-Zip.lha" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lha" /ve /t REG_SZ /d "lha Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lha\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,6" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lha\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lha\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.lha\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.rpm" /ve /t REG_SZ /d "7-Zip.rpm" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rpm" /ve /t REG_SZ /d "rpm Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rpm\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,10" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rpm\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rpm\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.rpm\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.deb" /ve /t REG_SZ /d "7-Zip.deb" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.deb" /ve /t REG_SZ /d "deb Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.deb\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,11" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.deb\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.deb\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.deb\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.arj" /ve /t REG_SZ /d "7-Zip.arj" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.arj" /ve /t REG_SZ /d "arj Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.arj\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,4" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.arj\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.arj\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.arj\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.vhd" /ve /t REG_SZ /d "7-Zip.vhd" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.vhd" /ve /t REG_SZ /d "vhd Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.vhd\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,20" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.vhd\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.vhd\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.vhd\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.wim" /ve /t REG_SZ /d "7-Zip.wim" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.wim" /ve /t REG_SZ /d "wim Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.wim\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,15" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.wim\shell" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.wim\shell\open" /ve /t REG_SZ /d "" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.wim\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.swm" /ve /t REG_SZ /d "7-Zip.swm" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.swm" /ve /t REG_SZ /d "swm Archive" /f 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.swm\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,15" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.swm\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.swm\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.swm\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.esd" /ve /t REG_SZ /d "7-Zip.esd" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.esd" /ve /t REG_SZ /d "esd Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.esd\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,15" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.esd\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.esd\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.esd\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.fat" /ve /t REG_SZ /d "7-Zip.fat" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.fat" /ve /t REG_SZ /d "fat Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.fat\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,21" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.fat\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.fat\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.fat\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.ntfs" /ve /t REG_SZ /d "7-Zip.ntfs" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.ntfs" /ve /t REG_SZ /d "ntfs Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.ntfs\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,22" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.ntfs\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.ntfs\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.ntfs\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.dmg" /ve /t REG_SZ /d "7-Zip.dmg" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.dmg" /ve /t REG_SZ /d "dmg Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.dmg\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,17" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.dmg\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.dmg\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.dmg\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.hfs" /ve /t REG_SZ /d "7-Zip.hfs" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.hfs" /ve /t REG_SZ /d "hfs Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.hfs\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,18" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.hfs\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.hfs\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.hfs\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.xar" /ve /t REG_SZ /d "7-Zip.xar" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xar" /ve /t REG_SZ /d "xar Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xar\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,19" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xar\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xar\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.xar\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\.squashfs" /ve /t REG_SZ /d "7-Zip.squashfs" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.squashfs" /ve /t REG_SZ /d "squashfs Archive" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.squashfs\DefaultIcon" /ve /t REG_SZ /d "C:\Program Files\7-Zip\7z.dll,24" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.squashfs\shell" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.squashfs\shell\open" /ve /t REG_SZ /d "" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\Software\Classes\7-Zip.squashfs\shell\open\command" /ve /t REG_SZ /d "\"C:\Program Files\7-Zip\7zFM.exe\" \"%%1\"" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "GlobalAssocChangedCounter" /t REG_DWORD /d "46" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options" /v "MenuIcons" /t REG_DWORD /d "0" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options" /v "ElimDupExtract" /t REG_DWORD /d "0" /f >nul 2>&1
+Reg.exe add "HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options" /v "ContextMenu" /t REG_DWORD /d "516" /f >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Applying BCDedits in UNFAIR 22H2 Lite.
+bcdedit /timeout 10 >nul 2>&1
+bcdedit /set x2apicpolicy Disable >nul 2>&1
+bcdedit /set nx OptIn >nul 2>&1
+bcdedit /set useplatformtick Yes >nul 2>&1
+bcdedit /set disabledynamictick Yes >nul 2>&1
+bcdedit /set bootmenupolicy Legacy >nul 2>&1
+bcdedit /set quietboot On >nul 2>&1
+bcdedit /set {globalsettings} custom:16000067 true >nul 2>&1
+bcdedit /set {globalsettings} custom:16000068 true >nul 2>&1
+bcdedit /set {globalsettings} custom:16000069 true >nul 2>&1
+bcdedit /set {current} description "UNFAIR 22H2 Lite" >nul 2>&1
+label C: UNFAIR Lite >nul 2>&1
+powercfg /hibernate off >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling Hibernation in UNFAIR 22H2 Lite.
+powercfg /h off >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Configuring Mitigations 1 in UNFAIR 22H2 Lite (Please wait).
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Set-ProcessMitigation -System -Disable DEP, EmulateAtlThunks, RequireInfo, BottomUp, HighEntropy, StrictHandle, CFG, StrictCFG, SuppressExports, SEHOP, AuditSEHOP, SEHOPTelemetry, ForceRelocateImages, DisableWin32kSystemCalls, DisableExtensionPoints, AuditSystemCall, BlockDynamicCode, AllowThreadsToOptOut, AuditDynamicCode, MicrosoftSignedOnly, AllowStoreSignedBinaries, AuditMicrosoftSigned, AuditStoreSigned, EnforceModuleDependencySigning, DisableNonSystemFonts, AuditFont, BlockRemoteImageLoads, BlockLowLabelImageLoads, PreferSystem32, AuditRemoteImageLoads, AuditLowLabelImageLoads, AuditPreferSystem32, EnableExportAddressFilter, AuditEnableExportAddressFilter, EnableExportAddressFilterPlus, AuditEnableExportAddressFilterPlus, EnableImportAddressFilter, AuditEnableImportAddressFilter, EnableRopStackPivot, AuditEnableRopStackPivot, EnableRopCallerCheck, AuditEnableRopCallerCheck, EnableRopSimExec, AuditEnableRopSimExec, TerminateOnError, DisallowChildProcessCreation, AuditChildProcess" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Configuring Mitigations 2 in UNFAIR 22H2 Lite.
+powershell "ForEach($v in (Get-Command -Name \"Set-ProcessMitigation\").Parameters[\"Disable\"].Attributes.ValidValues){Set-ProcessMitigation -SYSTEM -Disable $v.ToString() -ErrorAction SilentlyContinue}"
+cls
+for /f "tokens=3 skip=2" %%a in ('reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "MitigationAuditOptions"') do set mitigation_mask=%%a
+for /L %%a in (0,1,9) do (
+    set "mitigation_mask=!mitigation_mask:%%a=2!
+)
+for %%a in (
+	fontdrvhost.exe
+	dwm.exe
+	lsass.exe
+	svchost.exe
+	WmiPrvSE.exe
+	winlogon.exe
+	csrss.exe
+	audiodg.exe
+	ntoskrnl.exe
+	services.exe
+) do (
+	Reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\%%a" /v "MitigationOptions" /t REG_BINARY /d "!mitigation_mask!" /f >nul 2>&1
+	Reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\%%a" /v "MitigationAuditOptions" /t REG_BINARY /d "!mitigation_mask!" /f >nul 2>&1
+)
+Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "MitigationOptions" /t REG_BINARY /d "!mitigation_mask!" /f >nul 2>&1
+Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "MitigationAuditOptions" /t REG_BINARY /d "!mitigation_mask!" /f >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling Unnecessary Protocols in UNFAIR 22H2 Lite.
+for /f "delims=" %%a in ('powershell -NoLogo -NoProfile -NonInteractive -Command "Get-NetAdapter | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_lldp','ms_lltdio','ms_implat','ms_rspndr','ms_tcpip6','ms_server','ms_msclient' }"') do (
+    echo %%a
+)
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling NetBIOS in UNFAIR 22H2 Lite.
+for /f "delims=" %%u in ('reg query "HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Parameters\Interfaces" /s /f "NetbiosOptions" ^| findstr "HKEY"') do (
+    reg add "%%u" /v "NetbiosOptions" /t REG_DWORD /d "2" /f >nul 2>&1
+)
+timeout /t 5 /nobreak > NUL
+
+echo. Configuring DmaRemapping in UNFAIR 22H2 Lite.
+Reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DmaGuard\DeviceEnumerationPolicy" /v "value" /t REG_DWORD /d "2" /f >nul 2>&1
+for /f %%i in ('reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services" /s /f DmaRemappingCompatible ^| find /i "Services\" ') do (
+	echo %%i...
+	Reg.exe add "%%i" /v "DmaRemappingCompatible" /t REG_DWORD /d "0" /f >nul 2>&1
+) >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling AutoLoggers Randoms in UNFAIR 22H2 Lite.
+powershell Remove-AutologgerConfig -Name "autologger-diagtrack-listener", "cellcore", "cloudexperiencehostoobe", "lwtnetlog", "mellanox-Kernel", "microsoft-windows-assignedaccess-trace", "microsoft-windows-rdp-graphics-rdpidd-trace", "microsoft-windows-setup", "netcore", "ntfslog", "peauthlog", "radiomgr", "readyboot", "refslog", "setupplatform", "setupplatformtel", "spoolerlogger", "tcpiplogger", "wifisession", "wifidriverihvsessionrepro", "wifidriverihvsession", "wfp-ipsec-trace", "ubpm", "tilestore" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Configuring Fsutil Behaviors in UNFAIR 22H2 Lite.
+fsutil behavior set disable8dot3 1 >nul 2>&1
+fsutil behavior set disabledeletenotify 0 >nul 2>&1
+fsutil behavior set disablelastaccess 1 >nul 2>&1
+fsutil behavior set encryptpagingfile 0 >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Configuring MSI Mode in UNFAIR 22H2 Lite.
+for /f %%i in ('wmic path Win32_IDEController get PNPDeviceID^| findstr /l "PCI\VEN_"') do Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f >nul 2>&1
+for /f %%i in ('wmic path Win32_USBController get PNPDeviceID^| findstr /l "PCI\VEN_"') do Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f >nul 2>&1
+for /f %%i in ('wmic path Win32_VideoController get PNPDeviceID^| findstr /l "PCI\VEN_"') do Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f >nul 2>&1
+for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID^| findstr /l "PCI\VEN_"') do Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f >nul 2>&1
+for /f %%i in ('wmic path Win32_SoundDevice get PNPDeviceID^| findstr /l "PCI\VEN_"') do Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "0" /f >nul 2>&1
+for /f "tokens=*" %%i in ('reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI"^| findstr "HKEY"') do (
+			for /f "tokens=*" %%a in ('reg query "%%i"^| findstr "HKEY"') do Reg.exe delete "%%a\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /f >nul 2>&1
+		)
+)
+timeout /t 5 /nobreak > NUL
+
+echo. Deleting Junk Files in UNFAIR 22H2 Lite.
+powershell.exe Stop-Process -name "taskhostw" -Force >nul 2>&1
+powershell.exe Stop-Process -name "RuntimeBroker" -Force >nul 2>&1
+Reg.exe delete "HKCU\System\GameConfigStore\Children" /f >nul 2>&1
+Reg.exe delete "HKCU\System\GameConfigStore\Parents" /f >nul 2>&1
+del /f /a "%SYSTEMDRIVE%\Windows\System32\mcupdate_genuineintel.dll" >nul 2>&1
+del /f /a "%SYSTEMDRIVE%\Windows\System32\mcupdate_authenticamd.dll" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Eliminating HelpPane in UNFAIR 22H2 Lite.
+PowerRun.exe /SW:0 taskkill.exe /im "HelpPane.exe" /t /f >nul 2>&1
+PowerRun.exe /SW:0 cmd.exe /c del /F /Q "%SYSTEMDRIVE%\Windows\HelpPane.exe" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Configuring Tasks in UNFAIR 22H2 Lite.
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\MicrosoftEdgeUpdateTaskMachineCore" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\MicrosoftEdgeUpdateTaskMachineUA" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Windows Error Reporting\QueueReporting" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\DiskFootprint\Diagnostics" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Application Experience\StartupAppTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Autochk\Proxy" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Application Experience\PcaPatchDbTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\BrokerInfrastructure\BgTaskRegistrationMaintenanceTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\CloudExperienceHost\CreateObjectTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Defrag\ScheduledDefrag" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\DiskFootprint\StorageSense" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\MicrosoftEdgeUpdateBrowserReplacementTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Registry\RegIdleBackup" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Windows Filtering Platform\BfeOnServiceStartTypeChange" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\SoftwareProtectionPlatform\SvcRestartTaskNetwork" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\SoftwareProtectionPlatform\SvcRestartTaskLogon" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\StateRepository\MaintenanceTasks" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\UpdateOrchestrator\Report policies" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\UpdateOrchestrator\Schedule Scan Static Task" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\UpdateOrchestrator\Schedule Scan" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\UpdateOrchestrator\UpdateModelTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\UpdateOrchestrator\USO_UxBroker" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\UpdateOrchestrator\Schedule Work" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\UPnP\UPnPHostConfig" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\RetailDemo\CleanupOfflineContent" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Shell\FamilySafetyMonitor" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\InstallService\ScanForUpdates" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\InstallService\ScanForUpdatesAsUser" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\InstallService\SmartRetry" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\International\Synchronize Language Settings" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\MemoryDiagnostic\RunFullMemoryDiagnostic" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Multimedia\Microsoft\Windows\Multimedia" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Printing\EduPrintProv" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\RemoteAssistance\RemoteAssistanceTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Ras\MobilityManager" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\PushToInstall\LoginCheck" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Time Synchronization\SynchronizeTime" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Time Synchronization\ForceSynchronizeTime" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Time Zone\SynchronizeTimeZone" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\WaaSMedic\PerformRemediation" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\DiskCleanup\SilentCleanup" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Diagnosis\Scheduled" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Wininet\CacheTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Device Setup\Metadata Refresh" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Mobile Broadband Accounts\MNO Metadata Parser" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\WindowsUpdate\Scheduled Start" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Customer Experience Improvement Program\Uploader" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Shell\FamilySafetyMonitor" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Shell\FamilySafetyRefresh" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Shell\FamilySafetyUpload" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Application Experience\AitAgent" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Application Experience\StartupAppTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Autochk\Proxy" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /change /Disable /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\AppID\SmartScreenSpecific" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\NetTrace\GatherNetworkInfo" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\PI\Sqm-Tasks" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\FileHistory\File History (maintenance mode)" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\DiskFootprint\Diagnostics" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\CloudExperienceHost\CreateObjectTask" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\Windows Error Reporting\QueueReporting" >nul 2>&1
+PowerRun.exe /SW:0 schtasks.exe /Change /Disable /TN "\Microsoft\Windows\AppxDeploymentClient\UCPD velocity" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling Nagles Algorithm in UNFAIR 22H2 Lite.
+for /f %%i in ('wmic path win32_networkadapter get GUID ^| findstr "{"') do (
+	reg add "HKLM\System\CurrentControlSet\services\Tcpip\Parameters\Interfaces\%%i" /v "TcpAckFrequency" /t REG_DWORD /d "1" /f >nul 2>&1
+	reg add "HKLM\System\CurrentControlSet\services\Tcpip\Parameters\Interfaces\%%i" /v "TcpDelAckTicks" /t REG_DWORD /d "0" /f >nul 2>&1
+    reg add "HKLM\System\CurrentControlSet\services\Tcpip\Parameters\Interfaces\%%i" /v "TCPNoDelay" /t REG_DWORD /d "1" /f >nul 2>&1
+)
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling Energy Savings in UNFAIR 22H2 Lite.
+for %%a in (
+	EnhancedPowerManagementEnabled
+	AllowIdleIrpInD3
+	EnableSelectiveSuspend
+	DeviceSelectiveSuspended
+	SelectiveSuspendEnabled
+	SelectiveSuspendOn
+	WaitWakeEnabled
+	D3ColdSupported
+	WdfDirectedPowerTransitionEnable
+	EnableIdlePowerManagement
+	IdleInWorkingState
+) do for /f "delims=" %%b in ('reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum" /s /f "%%a" ^| findstr "HKEY"') do Reg.exe add "%%b" /v "%%a" /t REG_DWORD /d "0" /f > nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling Unnecessary Devices in UNFAIR 22H2 Lite.
+DevManView /disable "System Firmware" >nul 2>&1
+DevManView /disable "PCI Device" >nul 2>&1
+DevManView /disable "SM Bus Controller" >nul 2>&1
+DevManView /disable "Microsoft GS Wavetable Synth" >nul 2>&1
+DevManView /disable "Composite Bus Enumerator" >nul 2>&1
+DevManView /disable "Direct memory access controller" >nul 2>&1
+DevManView /disable "High precision event timer" >nul 2>&1
+DevManView /disable "Numeric Data Processor" >nul 2>&1
+DevManView /disable "Microsoft Hyper-V Virtualization Infrastructure Driver" >nul 2>&1
+DevManView /disable "Microsoft Virtual Drive Enumerator" >nul 2>&1
+DevManView /disable "NDIS Virtual Network Adapter Enumerator" >nul 2>&1
+DevManView /disable "Platform Security Processor" >nul 2>&1
+DevManView /disable "Programmable interrupt controller" >nul 2>&1
+DevManView /disable "Remote Desktop Device Redirector Bus" >nul 2>&1
+DevManView /disable "System CMOS/real time clock" >nul 2>&1
+DevManView /disable "System speaker" >nul 2>&1
+DevManView /disable "System timer" >nul 2>&1
+DevManView /disable "UMBus Root Bus Enumerator" >nul 2>&1
+DevManView /disable "System board" >nul 2>&1
+DevManView /disable "Motherboard resources" >nul 2>&1
+DevManView /disable "Microsoft Radio Device Enumeration Bus" >nul 2>&1
+DevManView /disable "Microsoft Kernel Debug Network Adapter" >nul 2>&1
+DevManView /disable "Legacy Device" >nul 2>&1
+DevManView /disable "PCI Memory Controller" >nul 2>&1
+DevManView /disable "PCI Simple Communications Controller" >nul 2>&1
+DevManView /disable "SM Bus Controller" >nul 2>&1
+DevManView /disable "PCI Data Acquisition and Signal Processing Controller" >nul 2>&1
+DevManView /disable "Base System Device" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling Services and Drivers in UNFAIR 22H2 Lite.
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmicguestinterface" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmicheartbeat" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmickvpexchange" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmicrdv" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmicshutdown" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmictimesync" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmicvmsession" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmicvss" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmcompute" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bthserv" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTAGService" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BluetoothUserService" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthAvctpSvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RFCOMM" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthEnum" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthLEEnum" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthA2dp" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthHFEnum" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthMini" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHMODEM" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHUSB" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HidBth" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Microsoft_Bluetooth_AvrcpTransport" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc" /v DependOnService /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SSDPSRV" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\iphlpsvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\qwave" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lltdsvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lltdio" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MsLldp" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\rdbss" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\diagsvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DPS" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiServiceHost" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiSystemHost" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DoSvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmwappushservice" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PcaSvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Themes" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache3.0.0.0" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ShellHWDetection" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sppsvc" /v "Start" /t REG_DWORD /d "3" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wlidsvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\StorSvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Beep" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TrkWks" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\trkwks" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\peauth" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pla" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\gcs" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DialogBlockingService" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RmSvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\smphost" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wisvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CDPUserSvc" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+PowerRun.exe /SW:0 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDrv" /v "Start" /t REG_DWORD /d "4" /f >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Blocking TextInputHost in UNFAIR 22H2 Lite.
+PowerRun.exe /SW:0 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TextInputHost.exe" /v Debugger /d "%SystemRoot%\system32\systray.exe" /f >nul 2>&1
+PowerRun.exe /SW:0 taskkill.exe /im "TextInputHost.exe" /t /f >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Blocking InputApp in UNFAIR 22H2 Lite.
+PowerRun.exe /SW:0 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe" /v Debugger /d "%SystemRoot%\system32\systray.exe" /f >nul 2>&1
+PowerRun.exe /SW:0 taskkill.exe /im "WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe" /t /f >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Disabling StartMenuExperienceHost in UNFAIR 22H2 Lite.
+PowerRun.exe /SW:0 taskkill.exe /im "StartMenuExperienceHost.exe" /t /f >nul 2>&1
+PowerRun.exe /SW:0 powershell.exe Rename-Item -Path "C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe" -NewName "StartMenuExperienceHost.old" >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+echo. Applying Power Plan in UNFAIR 22H2 Lite.
+powercfg /import "%SYSTEMROOT%\Setup\Files\Unfair.pow" a059e6c9-b478-41a2-8f0f-d643946af5f7 >nul 2>&1
+powercfg /s a059e6c9-b478-41a2-8f0f-d643946af5f7 >nul 2>&1
+timeout /t 5 /nobreak > NUL
+
+:: Final
+echo AuraOS 22H2 Lite Post Script Completed...
+
+:: Restart
+shutdown /r /f /t 10 /c "UNFAIR 22H2 Lite: Restarting PC"
+
+:: Clean
+Reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "POST INSTALL" /f >nul 2>&1
+RD /s /q "%SYSTEMROOT%\Setup\Files"
+DEL "%~f0"
+exit
