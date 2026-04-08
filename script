@@ -5,20 +5,6 @@ color A
 taskkill /F /IM explorer.exe >nul 2>&1
 powershell -Command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
 
-echo.                       ████████ ███████      ████████  ████████  █   █ ████████
-echo.                       ██    ██ ██                  █         █  █   █        █
-echo.                       ██    ██ ███████      ████████  ████████  █████ ████████
-echo.                       ██    ██      ██      █         █         █   █ █
-echo.                       ████████ ███████      ████████  ████████  █   █ ████████
-echo.  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-echo.  ║                                                                                                        ║
-echo.  ║                                   Welcome to UNFAIR 22H2 Lite.                                         ║
-echo.  ║                   Windows 10 22H2 Modified to get the Best Performance from your Hardware.             ║
-echo.  ║                                     https://dsc.gg/unfairteam                                          ║
-echo.  ║                                                                                                        ║
-echo.  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-echo.
-echo.
 echo.   Please press ENTER to continue with the UNFAIR 22H2 Lite POST SCRIPT...
 pause
 
