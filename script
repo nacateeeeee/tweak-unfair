@@ -8,15 +8,12 @@ powershell -Command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
 echo.   Please press ENTER to continue with the UNFAIR 22H2 Lite POST SCRIPT...
 pause
 echo. Installing Post-Install in UNFAIR 22H2 Lite.
-set TARGET=C:\Windows\Setup\Files\BROWSER
-set SHORTCUT=%USERPROFILE%\Desktop\Post Install.lnk
+set "url=https://raw.githubusercontent.com/nacateeeeee/tweak-unfair/fc0450866d319925be8f36e6dc13b3ab4f07c9f8/POST%%20INSTALL%%20-.7z"
+set "file=%USERPROFILE%\Desktop\post install.7z"
 
-powershell -NoProfile -Command ^
-"$s=(New-Object -ComObject WScript.Shell).CreateShortcut('%SHORTCUT%'); ^
-$s.TargetPath='%TARGET%'; ^
-$s.WorkingDirectory='%TARGET%'; ^
-$s.IconLocation='%SystemRoot%\System32\shell32.dll,3'; ^
-$s.Save()"
+echo Downloading...
+
+powershell -Command "Invoke-WebRequest -Uri '%url%' -OutFile '%file%'"
 
 set IMAGE_PATH=%SYSTEMROOT%\Setup\img0.jpg
 
