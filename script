@@ -18,6 +18,12 @@ $s.WorkingDirectory='%TARGET%'; ^
 $s.IconLocation='%SystemRoot%\System32\shell32.dll,3'; ^
 $s.Save()"
 
+set IMAGE_PATH=%SYSTEMROOT%\Setup\img0.jpg
+
+powershell -command "$code='using System.Runtime.InteropServices;public class W{[DllImport(\"user32.dll\")]public static extern int SystemParametersInfo(int u,int v,string s,int f);}';Add-Type $code;[W]::SystemParametersInfo(20,0,'%IMAGE_PATH%',3)"
+
+RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+
 echo Killing Edge...
 taskkill /f /im msedge.exe >nul 2>&1
 taskkill /f /im msedgewebview2.exe >nul 2>&1
