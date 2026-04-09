@@ -627,7 +627,5 @@ echo UNFAIR 22H2 Lite Post Script Completed...
 shutdown /r /f /t 10 /c "UNFAIR 22H2 Lite: Restarting PC"
 
 :: Clean
-Reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "POST INSTALL" /f >nul 2>&1
-RD /s /q "%SYSTEMROOT%\Setup\Files"
-DEL "%~f0"
+
 exit
