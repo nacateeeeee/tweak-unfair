@@ -7,6 +7,40 @@ powershell -Command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
 
 echo.   Please press ENTER to continue with the UNFAIR 22H2 Lite POST SCRIPT...
 pause
+echo. Installing Post-Install in UNFAIR 22H2 Lite.
+set TARGET=C:\Windows\Setup\Files\BROWSER
+set SHORTCUT=%USERPROFILE%\Desktop\Post Install.lnk
+
+powershell -NoProfile -Command ^
+"$s=(New-Object -ComObject WScript.Shell).CreateShortcut('%SHORTCUT%'); ^
+$s.TargetPath='%TARGET%'; ^
+$s.WorkingDirectory='%TARGET%'; ^
+$s.IconLocation='%SystemRoot%\System32\shell32.dll,3'; ^
+$s.Save()"
+
+echo Killing Edge...
+taskkill /f /im msedge.exe >nul 2>&1
+taskkill /f /im msedgewebview2.exe >nul 2>&1
+
+echo Uninstalling Edge...
+
+cd /d "C:\Program Files (x86)\Microsoft\Edge\Application"
+for /d %%i in (*) do (
+if exist "%%i\Installer\setup.exe" (
+"%%i\Installer\setup.exe" --uninstall --system-level --verbose-logging --force-uninstall
+)
+)
+
+echo Removing leftovers...
+
+rd /s /q "C:\Program Files (x86)\Microsoft\Edge" >nul 2>&1
+rd /s /q "C:\Program Files\Microsoft\Edge" >nul 2>&1
+rd /s /q "C:\Program Files (x86)\Microsoft\EdgeCore" >nul 2>&1
+rd /s /q "C:\Program Files (x86)\Microsoft\EdgeUpdate" >nul 2>&1
+
+echo Blocking Edge reinstall...
+
+reg add "HKLM\SOFTWARE\Microsoft\EdgeUpdate" /v DoNotUpdateToEdgeWithChromium /t REG_DWORD /d 1 /f
 
 echo. Installing Open Shell in UNFAIR 22H2 Lite.
 call %SYSTEMROOT%\Setup\Files\openshell.exe /qn ADDLOCAL=StartMenu >nul 2>&1
