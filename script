@@ -8,8 +8,6 @@ powershell -Command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
 echo.   Please press ENTER to continue with the UNFAIR 22H2 Lite POST SCRIPT...
 pause
 echo. Installing Post-Install in UNFAIR 22H2 Lite.
-set "url=https://raw.githubusercontent.com/nacateeeeee/tweak-unfair/fc0450866d319925be8f36e6dc13b3ab4f07c9f8/POST%%20INSTALL%%20-.7z"
-set "file=%USERPROFILE%\Desktop\post install.7z"
 
 echo Downloading...
 
