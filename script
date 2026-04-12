@@ -29,6 +29,12 @@ cd /d "C:\Program Files (x86)\Microsoft\Edge\Application"
 for /d %%i in (*) do (
 if exist "%%i\Installer\setup.exe" (
 "%%i\Installer\setup.exe" --uninstall --system-level --verbose-logging --force-uninstall
+schtasks /Change /Enable /TN "\Microsoft\Windows\International\Synchronize Language Settings"
+
+dism /online /set-uilang:en-US
+dism /online /set-userlocale:en-US
+dism /online /set-systemlocale:en-US
+dism /online /set-inputlocale:0409:00000409
 )
 )
 
