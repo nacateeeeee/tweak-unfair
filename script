@@ -19,6 +19,16 @@ powershell -command "$code='using System.Runtime.InteropServices;public class W{
 
 RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 
+set TARGET=C:\Windows\Setup\post install\
+set SHORTCUT=%USERPROFILE%\Desktop\Post Install.lnk
+
+powershell -NoProfile -Command ^
+"$s=(New-Object -ComObject WScript.Shell).CreateShortcut('%SHORTCUT%'); ^
+$s.TargetPath='%TARGET%'; ^
+$s.WorkingDirectory='%TARGET%'; ^
+$s.IconLocation='%SystemRoot%\System32\shell32.dll,3'; ^
+$s.Save()"
+
 echo Killing Edge...
 taskkill /f /im msedge.exe >nul 2>&1
 taskkill /f /im msedgewebview2.exe >nul 2>&1
